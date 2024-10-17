@@ -1,0 +1,302 @@
+*{
+    padding: 0;
+    margin: 0;
+    margin-block: 0;
+}
+
+
+:root{
+    --background-color: #262963ef;
+    --background-color-full: #262963;
+    --border-color: #b4b4b4;
+    --text-color: white;
+    --text-color-2: #b4b4b4;
+    --select-tabel: #5c5c5c6e;
+    --select-tabel-2: #00000088;
+}
+
+
+html{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    background-image: url('DALL·E\ 2024-10-14\ 19.52.17\ -\ A\ seamless\,\ repeatable\ pattern\ featuring\ hand-sketched\ icons\ and\ text\ related\ to\ encryption\ and\ secret\ codes.\ The\ icons\ include\ symbols\ like\ locks\,\ ke.webp');
+    background-repeat: repeat;
+    background-size: 620px;
+}
+
+main{
+    backdrop-filter: blur(3px);
+    height: max(835px, 100vh) ;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-areas: 
+    "grid-input grid-cipher-tabel"
+    "grid-key grid-cipher-tabel"
+    "grid-output grid-cipher-tabel";
+}
+.input{
+    grid-area: grid-input;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border-radius: 1em;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 1em;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    color: white;
+    position: relative;
+    grid-template-areas: 
+    "1"
+    "2";
+    .head-input{
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: var(--background-color-full);
+        align-items: center;
+        grid-area: 1;
+        border-bottom: solid 1px var(--border-color);
+        svg{
+            padding: 10px;
+            width: 24px;
+            height: 24px;
+            overflow: visible;
+        }
+        h2{
+            line-height: 100%;
+        }
+    }
+    textarea{
+        grid-area: 2;
+        box-sizing: border-box;
+        padding: 8px;
+        font-size: medium;
+        height: 100%;
+        resize: none;
+        border: none;
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;
+        background-color: transparent;
+        outline: none;
+        color: var(--text-color-2);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    
+}
+.key{
+    grid-area: grid-key;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border-radius: 1em;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 1em;
+    margin-top: 0;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+    grid-template-areas: 
+    "1"
+    "2";
+    .head-key{
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        overflow: hidden;
+        height: 45px;
+        grid-area: 1;
+        svg{
+            padding: 10px;
+            width: 24px;
+            height: 24px;
+            overflow: visible;
+        }
+        h2{
+            line-height: 100%;
+            border-right: solid 1px var(--border-color);
+            padding-top: 50%;
+            padding-bottom: 50%;
+            padding-right: 10px;
+        }
+        svg, h2, button{
+            background-color: var(--background-color-full);
+        }
+        textarea{
+            grid-area: 2;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: medium;
+            margin-left: 8px;
+            margin-right: 8px;
+            overflow: hidden;
+            white-space: nowrap;
+            resize: none;
+            border: none;
+            background-color: transparent;
+            outline: none;
+            color: var(--text-color-2);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        button{
+            border: none;
+            border-left: solid 1px var(--border-color);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            label{
+                color: var(--text-color);
+                font-weight: 500;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: medium;
+                padding-right: 10px;
+            }
+            svg{
+                rotate: 0deg;
+                background-color: transparent;
+                transition: rotate 200ms ease-in-out;
+            }
+            .button-svg{
+                rotate: 180deg;
+            }
+        }
+    }
+    
+}
+.output{
+    grid-area: grid-output;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border-radius: 1em;
+    box-sizing: border-box;
+    margin: 1em;
+    margin-top: 0;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+    grid-template-areas: 
+    "1"
+    "2";
+    .head-output{
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: var(--background-color-full);
+        align-items: center;
+        grid-area: 1;
+        border-bottom: solid 1px var(--border-color);
+        svg{
+            padding: 10px;
+            width: 24px;
+            height: 24px;
+        }
+        h2{
+            line-height: 100%;
+        }
+    }
+    textarea{
+        grid-area: 2;
+        box-sizing: border-box;
+        padding: 8px;
+        font-size: medium;
+        height: 100%;
+        resize: none;
+        border: none;
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;
+        background-color: transparent;
+        outline: none;
+        color: var(--text-color-2);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+}
+.cipherTabel{
+    
+    grid-area: grid-cipher-tabel;
+    min-width: max-content;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border-radius: 1em;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 1em;
+    margin-left: 0;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+    grid-template-areas: 
+    "1"
+    "2";
+    .head-cipher-Tabel{
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: var(--background-color-full);
+        align-items: center;
+        gap: 1em;
+        grid-area: 1;
+        border-bottom: solid 1px var(--border-color);
+        svg{
+            padding: 10px;
+            width: 24px;
+            height: 24px;
+        }
+        h2{
+            line-height: 100%;
+        }
+    }
+    tabel {
+        grid-area: 2;
+    }
+
+
+    table, th, td {
+        text-align: center;
+        height: max-content;
+        width: max-content;
+        margin: 10px;
+    }
+    td, th{
+        width: 25px;
+        height: 25px;
+        text-transform: uppercase;
+    }
+    tr:nth-child(1) th{
+        text-transform: lowercase;
+        border-bottom: 1px solid var(--border-color);
+    }
+    td{
+        font-size: small;
+        color: var(--text-color-2);
+    }
+    td:nth-child(1), th:nth-child(1) {
+        border-right: var(--border-color) solid 1px;
+        border-collapse: collapse;
+    }
+    tr:nth-child(1) th:nth-child(1){
+        border: none;
+    }
+    .highlight-cell {
+        background-color: var(--select-tabel-2); /* Auffällige Farbe für die angeklickte Zelle */
+    }
+    .highlight-row-col {
+        background-color: var(--select-tabel); /* Weniger auffällige Farbe für die Zeile und Spalte */
+    }
+    .tabel{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media(max-width: 1250px) {
+    .cipherTabel{
+        display: none;
+    }
+}
